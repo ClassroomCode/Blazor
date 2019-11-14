@@ -24,7 +24,7 @@ namespace WebForms
 
         protected void CurrencyList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CurrencyRateLabel.Text = CurrencyList.SelectedValue;
+            CurrencyRateLabel.Text = CurrencyList.SelectedValue.GetHashCode().ToString();
         }
     }
 }

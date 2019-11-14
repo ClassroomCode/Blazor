@@ -67,8 +67,8 @@
                           </td>
                           <td align="left">
                             <input id="AirfareStandard" type="radio" name="Airfare" value="Standard" checked="&quot;checked&quot;" /><label for="AirfareStandard">Included</label>
-                            <input id="AirfarePremium" type="radio" name="Airfare" value="Premium" /><label for="AirfarePremium">Premium (+$2000)</label>
-                            <input id="AirfareUltraPremium" type="radio" name="Airfare" value="UltraPremium" /><label for="AirfareUltraPremium">Ultra Premium (+$3000)</label>
+                            <input id="AirfarePremium" type="radio" name="Airfare" value="Premium" /><label for="AirfarePremium">Premium</label>
+                            <input id="AirfareUltraPremium" type="radio" name="Airfare" value="UltraPremium" /><label for="AirfareUltraPremium">Ultra Premium</label>
                           </td>
                         </tr>
                         <tr>

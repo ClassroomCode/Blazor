@@ -1,0 +1,340 @@
+.calendar {
+	background-color: #CCCCCC;
+	border: 2px solid #333333;
+	overflow: visible;
+	position: absolute;
+	z-index: 1;
+	width: 125px;
+	left: 690px;
+	top: 70px;
+}
+body, td, p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+option, select, input, textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.tblHdr {
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #E3E3E3;
+}
+.tblHdrSchedule {
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #E3E3E3;
+	border-bottom-width: 1px;
+	border-bottom: 1px solid #000000;
+}
+.tblProposal td span {
+    margin-right: 5px;
+}
+a {
+	text-decoration: none;
+	color: #000099;
+}
+a:hover {
+	text-decoration: underline;
+}
+a.delete {
+	font-size: 9.5px;
+	padding: 2px;
+	text-decoration: none;
+	color: #336699;
+}
+a.delete:hover {
+	text-decoration: none;
+	background-color: #003366;
+	color: #FFFFFF;
+}
+.rowA {
+	background-color: #FFFFFF;
+}
+.rowB {
+	background-color: #F3F3F3;
+}
+.rowC {
+	background-color: #FFCC66;
+}
+.rowHighlight {
+	background-color: #FFF8DD;
+}
+.rowAlert {
+	background-color: #D7FFFF;
+}
+.yr2005 {
+	background-color: #FFE081;
+}
+.yr2006 {
+	background-color: #BBECA9;
+}
+.yr2007 {
+	background-color: #A9C4EC;
+}
+.yr2008 {
+	background-color: #ECA9A9;
+}
+.yr2009 {
+	background-color: #52D2E9;
+}
+.yr2010 {
+	background-color: #DAD88F;
+}
+.yr2011 {
+	background-color: #DB9FEA;
+}
+.yr2012 {
+	background-color: #9CC375;
+}
+.yr2013 {
+	background-color: #FF9900;
+}
+.yr2014 {
+	background-color: #63D196;
+}
+.yr2015 {
+	background-color: #CEB9D9;
+}
+.yr2016 {
+	background-color: #B6FDFF;
+}
+.yr2017 {
+	background-color: #DCB031;
+}
+.yr2018 {
+	background-color: #9AACFF;
+}
+.yr2019 {
+    background-color: #C8E8DD;
+}
+.subHeader {
+	font-weight: bold;
+	padding-top: 12px;
+	border-bottom: 2px solid #666666;
+}
+.percentOn {
+	background-color: #F9C494;
+}
+.percentBg {
+	background-color: #F8F4D7;
+}
+.legend {
+	color: #666666;
+}
+.bigger {
+	font-size: 14px;
+}
+.calendarClass {
+	border: 1px solid #000000;
+	background-color: #FAECB4;
+	padding: 4px;
+}
+.calendarProbono {
+	border: 1px solid #000000;
+	background-color: #E3E3E3;
+	padding: 4px;
+}
+.calendarWebex {
+	border-top: 3px solid #CC0000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+	background-color: #FAECB4;
+	padding: 4px;
+}
+.calendarProbonoWebex {
+	border-top: 3px solid #CC0000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+	background-color: #E3E3E3;
+	padding: 4px;
+}
+.calendarHold {
+	border: 1px solid #000000;
+	background-color: #DDE4F7;
+	padding: 4px;
+}
+.calendarVacation {
+	border: 1px solid #000000;
+	background-color: #FFFF80;
+	padding: 4px;
+}
+.monthDays {
+	color: #000000;
+	background-color: #E3E3E3;
+	font-weight: bold;
+	padding: 3px;
+}
+.monthDaysOn {
+	color: #000000;
+	background-color: #00CCFF;
+	font-weight: bold;
+	padding: 3px;
+}
+.nextMonthDays {
+	color: #000000;
+	background-color: #F6F6F6;
+	padding: 3px;
+}
+hr {
+	background-color: #CCCCCC;
+	color: #CCCCCC;
+}
+hr.div {
+	background-color: #000000;
+	color: #000000;
+}
+.monthDiv {
+	background-color: #FBF6E5;
+	font-weight: bold;
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+}
+.notes {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+}
+.dataRow {
+	background-color: #FAF7E2;
+}
+.strikeThrough {
+	text-decoration: line-through;
+}
+.halfheight {
+	line-height: 50%;
+}
+.topbottom {
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+.alert {
+	color: #FF0000;
+}
+.highlightHdr {
+	color: #000000;
+	background-color: #ECECEC;
+	padding: 3px;
+}
+.smaller {
+	font-size: 10px;
+}
+
+/* the div that holds the date picker calendar */
+.dpDiv {
+	}
+
+
+/* the table (within the div) that holds the date picker calendar */
+.dpTable {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	color: #505050;
+	background-color: #ece9d8;
+	border: 1px solid #AAAAAA;
+	}
+
+
+/* a table row that holds date numbers (either blank or 1-31) */
+.dpTR {
+	}
+
+
+/* the top table row that holds the month, year, and forward/backward buttons */
+.dpTitleTR {
+	}
+
+
+/* the second table row, that holds the names of days of the week (Mo, Tu, We, etc.) */
+.dpDayTR {
+	}
+
+
+/* the bottom table row, that has the "This Month" and "Close" buttons */
+.dpTodayButtonTR {
+	}
+
+
+/* a table cell that holds a date number (either blank or 1-31) */
+.dpTD {
+	border: 1px solid #ece9d8;
+	}
+
+
+/* a table cell that holds a highlighted day (usually either today's date or the current date field value) */
+.dpDayHighlightTD {
+	background-color: #CCCCCC;
+	border: 1px solid #AAAAAA;
+	}
+
+
+/* the date number table cell that the mouse pointer is currently over (you can use contrasting colors to make it apparent which cell is being hovered over) */
+.dpTDHover {
+	background-color: #aca998;
+	border: 1px solid #888888;
+	cursor: pointer;
+	color: red;
+	}
+
+
+/* the table cell that holds the name of the month and the year */
+.dpTitleTD {
+	}
+
+
+/* a table cell that holds one of the forward/backward buttons */
+.dpButtonTD {
+	}
+
+
+/* the table cell that holds the "This Month" or "Close" button at the bottom */
+.dpTodayButtonTD {
+	}
+
+
+/* a table cell that holds the names of days of the week (Mo, Tu, We, etc.) */
+.dpDayTD {
+	background-color: #CCCCCC;
+	border: 1px solid #AAAAAA;
+	color: white;
+	}
+
+
+/* additional style information for the text that indicates the month and year */
+.dpTitleText {
+	font-size: 12px;
+	color: gray;
+	font-weight: bold;
+	}
+
+
+/* additional style information for the cell that holds a highlighted day (usually either today's date or the current date field value) */ 
+.dpDayHighlight {
+	color: 4060ff;
+	font-weight: bold;
+	}
+
+
+/* the forward/backward buttons at the top */
+.dpButton {
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: gray;
+	background: #d8e8ff;
+	font-weight: bold;
+	padding: 0px;
+	}
+
+
+/* the "This Month" and "Close" buttons at the bottom */
+.dpTodayButton {
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: gray;
+	background: #d8e8ff;
+	font-weight: bold;
+	}

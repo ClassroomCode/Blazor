@@ -3,6 +3,9 @@ using System.Reflection.Metadata;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<NorthwindContext>(options =>
+  options.UseSqlServer(@"Server=localhost;Database=Northwind;Integrated Security=True;TrustServerCertificate=True"));
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
@@ -25,4 +28,3 @@ app.MapGet("/customer/{id}", (string id) => {
 app.MapControllers();
 
 app.Run();
-

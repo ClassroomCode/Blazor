@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-public class Customer
+public class Customer : IValidatableObject
 {
     [Length(5, 5, ErrorMessage = "ID must be 5 characters")]
     public string CustomerID { get; set; } = string.Empty;
@@ -14,4 +14,19 @@ public class Customer
     public string? Country { get; set; }
     public string? Phone { get; set; }
     public string? Fax { get; set; }
+
+    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
+        
+        if (CompanyName.StartsWith("x")) {
+            yield return new ValidationResult(
+                "Company name cannot start with x",
+                new[] { nameof(CompanyName) });
+        }
+
+        if (ContactName?.StartsWith("x") == true) {
+            yield return new ValidationResult(
+                "Contact name cannot start with x",
+                new[] { nameof(ContactName) });
+        }
+    }
 }

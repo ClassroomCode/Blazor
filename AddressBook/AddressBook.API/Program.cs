@@ -10,4 +10,12 @@ app.MapGet("/customer", () => {
     return customers;
 });
 
+app.MapGet("/customer/{id}", (string id) => {
+    using var db = new NorthwindContext();
+    var customer = db.Customers.Find(id);
+    if (customer is null) return Results.NotFound();
+    return Results.Ok(customer);
+});
+
 app.Run();
+

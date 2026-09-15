@@ -13,7 +13,7 @@ GET http://localhost:5000/customer/xxx
 POST http://localhost:5000/customer
 Content-Type: application/json
 {
-  "customerID": "BLGTS",
+  "customerID": "GREAL",
   "companyName": "Microsoft",
   "contactName": "Bill Gates"
 }

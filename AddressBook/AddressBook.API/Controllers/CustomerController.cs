@@ -3,20 +3,57 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 [ApiController]
-public class CustomerController : ControllerBase
+public class CustomerController(NorthwindContext db) 
+    : ControllerBase
 {
     [HttpGet("customer")]
     public ActionResult<List<Customer>> GetAllCustomers() {
-        using var db = new NorthwindContext();
         var customers = db.Customers.AsNoTracking().ToList();
         return customers;
     }
 
     [HttpGet("customer/{id}")]
     public ActionResult<Customer> GetCustomer(string id) {
-        using var db = new NorthwindContext();
         var customer = db.Customers.Find(id);
         if (customer is null) return NotFound();
         return customer;
+    }
+
+    [HttpPost("customer")]
+    public ActionResult CreateCustomer(Customer customer) {
+        db.Customers.Add(customer);
+        db.SaveChanges();
+
+        return CreatedAtAction("GetCustomer",
+          new { id = customer.CustomerID }, customer);
+    }
+
+    [HttpPut("customer/{id}")]
+    public ActionResult PutCustomer(string id, Customer customer) {
+        var existingCustomer = db.Customers.Find(id);
+        if (existingCustomer is null) {
+            db.Customers.Add(customer);
+            db.SaveChanges();
+            return CreatedAtAction("GetCustomer",
+              new { id = customer.CustomerID }, customer);
+        }
+        else {
+            db.Entry(existingCustomer).CurrentValues.SetValues(customer);
+            db.SaveChanges();
+            return NoContent();
+        }
+    }
+
+    [HttpDelete("customer/{id}")]
+    public ActionResult DeleteCustomer(string id) {
+        var existingCustomer = db.Customers.Find(id);
+        if (existingCustomer is null) {
+            return NotFound();
+        }
+        else {
+            db.Customers.Remove(existingCustomer);
+            db.SaveChanges();
+            return NoContent();
+        }
     }
 }

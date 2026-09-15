@@ -2,8 +2,32 @@ GET http://localhost:5000/customer
 
 ###
 
-GET http://localhost:5000/customer/greal
+GET http://localhost:5000/customer/blgts
 
 ###
 
 GET http://localhost:5000/customer/xxx
+
+###
+
+POST http://localhost:5000/customer
+Content-Type: application/json
+{
+  "customerID": "BLGTS",
+  "companyName": "Microsoft",
+  "contactName": "Bill Gates"
+}
+
+###
+
+PUT http://localhost:5000/customer/blgts
+Content-Type: application/json
+{
+  "customerID": "BLGTS",
+  "companyName": "Microsoft",
+  "contactName": "William Gates"
+}
+
+###
+
+DELETE http://localhost:5000/customer/blgts

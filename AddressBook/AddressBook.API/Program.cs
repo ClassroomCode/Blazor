@@ -1,12 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// services
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
 app.MapGet("/customer", () => {
     using var db = new NorthwindContext();
-    var customers = db.Customers.ToList();
+    var customers = db.Customers.AsNoTracking().ToList();
     return customers;
 });
 
@@ -16,6 +19,8 @@ app.MapGet("/customer/{id}", (string id) => {
     if (customer is null) return Results.NotFound();
     return Results.Ok(customer);
 });
+
+app.MapControllers();
 
 app.Run();
 

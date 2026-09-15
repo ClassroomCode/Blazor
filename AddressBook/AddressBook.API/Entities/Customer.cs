@@ -17,16 +17,16 @@ public class Customer : IValidatableObject
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
         
-        if (CompanyName.StartsWith("x")) {
+        if (CompanyName.StartsWith('x')) {
             yield return new ValidationResult(
                 "Company name cannot start with x",
-                new[] { nameof(CompanyName) });
+                [nameof(CompanyName)]);
         }
 
-        if (ContactName?.StartsWith("x") == true) {
+        if (ContactName?.StartsWith('x') == true) {
             yield return new ValidationResult(
                 "Contact name cannot start with x",
-                new[] { nameof(ContactName) });
+                [nameof(ContactName)]);
         }
     }
 }

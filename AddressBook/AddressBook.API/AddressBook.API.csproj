@@ -3,6 +3,7 @@
   	<TargetFramework>net10.0</TargetFramework>
   	<Nullable>enable</Nullable>
   	<ImplicitUsings>enable</ImplicitUsings>
+  	<UserSecretsId>1144643b-5f9b-4d10-8697-3cdff7085edd</UserSecretsId>
 	</PropertyGroup>
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.12" />

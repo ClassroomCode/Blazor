@@ -9,7 +9,7 @@ public class CustomerController(NorthwindContext db)
     : ControllerBase
 {
     [HttpGet("customer")]
-    public ActionResult<Customer[]> GetAllCustomers(int offset = 0, int limit = 10) {
+    public async Task<ActionResult<Customer[]>> GetAllCustomers(int offset = 0, int limit = 10) {
         if (offset < 0) {
             return BadRequest(new { message = "Offset must be positive" });
         }
@@ -17,11 +17,11 @@ public class CustomerController(NorthwindContext db)
             return BadRequest(new { message = "Limit must be in the range 1-20" });
         }
 
-        var customers = db.Customers
+        var customers = await db.Customers
             .AsNoTracking()
             .OrderBy(c => c.CustomerID)
             .Skip(offset).Take(limit)
-            .ToArray();
+            .ToArrayAsync();
 
         return customers;
     }

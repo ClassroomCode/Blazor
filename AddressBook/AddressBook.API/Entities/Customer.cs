@@ -16,7 +16,7 @@ public class Customer : IValidatableObject
     public string? Fax { get; set; }
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
-        
+
         if (CompanyName.StartsWith('x')) {
             yield return new ValidationResult(
                 "Company name cannot start with x",

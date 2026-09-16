@@ -31,3 +31,17 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:5000/customer/blgts
+
+###
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+{
+  "email": "bill@example.com",
+  "password": "abc123"
+}
+
+###
+
+GET http://localhost:5000/customer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJsb2NhbGhvc3Q6NTAwMCIsImlzcyI6ImxvY2FsaG9zdDo1MDAwIiwiZXhwIjoxNzg5NTgyNjIyLCJzdWIiOiJiaWxsQGV4YW1wbGUuY29tIiwiaWF0IjoxNzg5NTc5MDIyLCJuYmYiOjE3ODk1NzkwMjJ9.S_V3_9Ok2tiCTkyJEZuqaZWb5vBhO8a8dsfBpyMLzLI

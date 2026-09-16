@@ -15,6 +15,8 @@ public class Customer : IValidatableObject
     public string? Phone { get; set; }
     public string? Fax { get; set; }
 
+    public ICollection<Order> Orders { get; set; } = new List<Order>();
+
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
 
         if (CompanyName.StartsWith('x')) {

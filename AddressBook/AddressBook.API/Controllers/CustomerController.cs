@@ -9,14 +9,29 @@ public class CustomerController(NorthwindContext db)
     : ControllerBase
 {
     [HttpGet("customer")]
-    public ActionResult<List<Customer>> GetAllCustomers() {
-        var customers = db.Customers.AsNoTracking().ToList();
+    public ActionResult<Customer[]> GetAllCustomers(int offset = 0, int limit = 10) {
+        if (offset < 0) {
+            return BadRequest(new { message = "Offset must be positive" });
+        }
+        if (limit < 1 || limit > 20) {
+            return BadRequest(new { message = "Limit must be in the range 1-20" });
+        }
+
+        var customers = db.Customers
+            .AsNoTracking()
+            .OrderBy(c => c.CustomerID)
+            .Skip(offset).Take(limit)
+            .ToArray();
+
         return customers;
     }
 
     [HttpGet("customer/{id}")]
     public ActionResult<Customer> GetCustomer(string id) {
-        var customer = db.Customers.Find(id);
+        var customer = db.Customers
+          .Include(c => c.Orders)
+          .SingleOrDefault(c => c.CustomerID == id);
+
         if (customer is null) return NotFound();
         return customer;
     }

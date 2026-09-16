@@ -11,7 +11,10 @@ builder.Services.AddSingleton<TokenProvider>();
 builder.Services.AddDbContext<NorthwindContext>(options =>
   options.UseSqlServer(@"Server=localhost;Database=Northwind;Integrated Security=True;TrustServerCertificate=True"));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options => {
+    options.JsonSerializerOptions.ReferenceHandler =
+      System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+});
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
   .AddJwtBearer(options => {

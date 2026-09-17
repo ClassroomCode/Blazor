@@ -32,6 +32,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
+var corsOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? [];
+builder.Services.AddCors(options => {
+    options.AddPolicy("ClientApp", policy => {
+        policy.WithOrigins(corsOrigins)
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment()) {
@@ -51,6 +60,8 @@ if (app.Environment.IsDevelopment()) {
         options.SwaggerEndpoint("/openapi/v1.json", "v1");
     });
 }
+
+app.UseCors("ClientApp");
 
 app.UseAuthentication();
 app.UseAuthorization();

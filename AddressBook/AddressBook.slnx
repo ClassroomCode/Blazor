@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="AddressBook.API/AddressBook.API.csproj" />
+  <Project Path="AddressBook.Common/AddressBook.Common.csproj" Id="4249b548-245f-4fb9-a088-2c7e5b5502a1" />
   <Project Path="AddressBook.ServerClientApp/AddressBook.ServerClientApp.csproj" Id="e0a0cd43-a9d2-41fc-901c-b3485dded6ea" />
 </Solution>

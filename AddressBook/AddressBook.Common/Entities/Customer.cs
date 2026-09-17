@@ -4,6 +4,7 @@ public class Customer : IValidatableObject
 {
     [Length(5, 5, ErrorMessage = "ID must be 5 characters")]
     public string CustomerID { get; set; } = string.Empty;
+    [Required]
     public string CompanyName { get; set; } = string.Empty;
     public string? ContactName { get; set; }
     public string? ContactTitle { get; set; }

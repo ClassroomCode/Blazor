@@ -1,0 +1,50 @@
+﻿@using Microsoft.EntityFrameworkCore;
+@page "/customers"
+@attribute [StreamRendering]
+@inject NorthwindContext db
+
+<PageTitle>Customers</PageTitle>
+
+<h1>Customers</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (customers == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in customers)
+            {
+                <tr>
+                    <td>@customer.CompanyName</td>
+                    <td><a href="@($"/customer/{customer.CustomerID}/edit")">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Customer[]? customers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate asynchronous loading to demonstrate streaming rendering
+        await Task.Delay(500);
+
+        customers = await db.Customers
+            .AsNoTracking()
+            .OrderBy(c => c.CustomerID)
+            .ToArrayAsync();
+    }
+}

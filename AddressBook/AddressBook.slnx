@@ -1,5 +1,8 @@
 <Solution>
   <Project Path="AddressBook.API/AddressBook.API.csproj" />
+  <Project Path="AddressBook.ClientApp/AddressBook.ClientApp.Client/AddressBook.ClientApp.Client.csproj" Id="cc5a3831-10ec-48e9-aebb-164aa12b8cda" />
+  <Project Path="AddressBook.ClientApp/AddressBook.ClientApp/AddressBook.ClientApp.csproj" Id="17b2e874-851c-451b-8fba-d6d6acc3c642" />
   <Project Path="AddressBook.Common/AddressBook.Common.csproj" Id="4249b548-245f-4fb9-a088-2c7e5b5502a1" />
+  <Project Path="AddressBook.DataAccess/AddressBook.DataAccess.csproj" Id="43960526-a201-4b47-bad8-b99fe0b0d167" />
   <Project Path="AddressBook.ServerClientApp/AddressBook.ServerClientApp.csproj" Id="e0a0cd43-a9d2-41fc-901c-b3485dded6ea" />
 </Solution>

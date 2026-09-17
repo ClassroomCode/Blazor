@@ -1,0 +1,45 @@
+﻿@page "/customers"
+@rendermode InteractiveAuto
+@inject HttpClient Http
+
+<PageTitle>Customers</PageTitle>
+
+<h1>Customers</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (customers == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in customers)
+            {
+                <tr>
+                    <td>@customer.CompanyName</td>
+                    <td><a href="@($"/customer/{customer.CustomerID}/edit")">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Customer[]? customers;
+
+    protected override async Task OnInitializedAsync() {
+        await Task.Delay(500);
+
+        customers = await 
+        Http.GetFromJsonAsync<Customer[]>("customer");
+    }
+}

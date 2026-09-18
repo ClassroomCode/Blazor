@@ -5,4 +5,5 @@
   <Project Path="AddressBook.Common/AddressBook.Common.csproj" Id="4249b548-245f-4fb9-a088-2c7e5b5502a1" />
   <Project Path="AddressBook.DataAccess/AddressBook.DataAccess.csproj" Id="43960526-a201-4b47-bad8-b99fe0b0d167" />
   <Project Path="AddressBook.ServerClientApp/AddressBook.ServerClientApp.csproj" Id="e0a0cd43-a9d2-41fc-901c-b3485dded6ea" />
+  <Project Path="AddressBook.Tests/AddressBook.Tests.csproj" Id="7a83d3d7-731f-4e10-9e10-5680eb1f5a4c" />
 </Solution>

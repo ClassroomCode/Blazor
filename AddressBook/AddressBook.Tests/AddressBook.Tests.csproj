@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="bunit" Version="2.11.3" />
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.12" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageReference Include="Moq" Version="4.20.72" />
@@ -18,7 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AddressBook.API\AddressBook.API.csproj" />
+	  <ProjectReference Include="..\AddressBook.API\AddressBook.API.csproj">
+		  <Aliases>AddressBookApi</Aliases>
+	  </ProjectReference>
     <ProjectReference Include="..\AddressBook.ClientApp\AddressBook.ClientApp.Client\AddressBook.ClientApp.Client.csproj" />
     <ProjectReference Include="..\AddressBook.Common\AddressBook.Common.csproj" />
     <ProjectReference Include="..\AddressBook.DataAccess\AddressBook.DataAccess.csproj" />

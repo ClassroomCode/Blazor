@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Reflection.Metadata;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -84,3 +83,5 @@ app.MapGet("/customer/{id}", (string id) => {
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }

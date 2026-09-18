@@ -1,6 +1,6 @@
 ﻿@page "/customers"
 @rendermode InteractiveAuto
-@inject HttpClient Http
+@inject INorthwindService Svc
 
 <PageTitle>Customers</PageTitle>
 
@@ -34,12 +34,12 @@ else
 }
 
 @code {
-    private Customer[]? customers;
+    [PersistentState]
+    public Customer[]? customers { get; set; }
 
     protected override async Task OnInitializedAsync() {
         await Task.Delay(500);
 
-        customers = await 
-        Http.GetFromJsonAsync<Customer[]>("customer");
+        customers = await Svc.GetCustomers();
     }
 }

@@ -1,12 +1,12 @@
 using AddressBook.ClientApp.Client.Pages;
 using AddressBook.ClientApp.Components;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped(sp =>
-    new HttpClient {
-        BaseAddress = new Uri("http://localhost:5000")
-    });
+var connStr = builder.Configuration.GetConnectionString("Northwind");
+builder.Services.AddDbContext<INorthwindService, NorthwindContext>(options =>
+    options.UseSqlServer(connStr));
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
